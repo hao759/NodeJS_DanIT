@@ -1,13 +1,13 @@
 import express from "express";
 import configViewEngine from "./configs/viewEngine";
 import initWebroute from "./route/web";
-import connection from './configs/connectDB';
+import connection from "./configs/connectDB";
 
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 8079; //backup code
 
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 configViewEngine(app); // confige view
