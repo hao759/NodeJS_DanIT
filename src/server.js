@@ -16,7 +16,9 @@ initWebroute(app); // confige route
 // app.get('/', (req, res) => {
 //     res.render('test/index.ejs')
 // })
-
+app.use((req,res)=>{
+  return res.render('404.ejs')
+})
 initAPIRoute(app);
 
 

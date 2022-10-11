@@ -41,3 +41,15 @@ body {
 .create-user-container *{
   padding: 5px;
 }
+
+.upload_file button{
+  margin: 20px;
+}
+.upload_filelabel {
+  display: block;
+}
+
+.form2 * {
+  margin: 20px;
+  display: block;
+}
