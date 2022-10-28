@@ -13,6 +13,9 @@ const initWebroute = (app) => {
   router.get("/editUser/:userID", homeController.editUser); //id sai ??
   router.post("/Update-user", homeController.updateUser);
 
+
+  router.post("/testSendMail", homeController.testSendMail);
+
   // router.get("/uploadFile", homeController.getUploadFilePage);
   // router.post("/upload-profile-pic", homeController.handleUploadFile);
 

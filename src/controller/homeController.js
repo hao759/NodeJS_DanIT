@@ -1,5 +1,7 @@
 import pool from "../configs/connectDB";
 const multer = require("multer");
+require('dotenv').config()
+import nodemailer from "nodemailer"
 
 let getHomepage = async (req, res) => {
   const [rows, fields] = await pool.execute("SELECT * FROM user ");
@@ -33,7 +35,7 @@ let editUser = async (req, res) => {
   console.log("id");
   let id = req.params.userID;
   let [user] = await pool.execute("SELECT * FROM user  where id=?", [id]);
-  return res.render("../view/update.ejs", { dataUser: user });
+  return res.render("update.ejs", { dataUser: user });
 };
 let updateUser = async (req, res) => {
   let [user] = await pool.execute(
@@ -101,6 +103,41 @@ let getUploadFilePage = async (req, res) => {
 // };
 // exports.imageFilter = imageFilter;
 
+
+
+
+
+
+
+
+
+
+let testSendMail= async(req,res)=>{
+  // let testAccount = await nodemailer.createTestAccount();
+  let reciveEmail=req.body.reciveEmail;
+  // create reusable transporter object using the default SMTP transport
+  let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: "qhao74155@gmail.com", // generated ethereal user
+      pass: process.env.EMAIL_PASSWORD, // generated ethereal password
+    },
+  });
+
+  // send mail with defined transport object
+  let info = await transporter.sendMail({
+    from: '"Fred Foo 👻" <foo@example.com>', // sender address
+    to: reciveEmail,// "bar@example.com, baz@example.com", 
+    subject: "Hello ✔", // Subject line
+    text: "Hello world?DDaay la text", // plain text body
+    html: "<b>Hello world? \n Ê thứ 7 html nek</b>", // html body
+  });
+}
+
+
+
 module.exports = {
   getHomepage,
   getDetailpage,
@@ -109,6 +146,9 @@ module.exports = {
   editUser,
   updateUser,
   getUploadFilePage,
+
+
+  testSendMail
   // handleUploadFile,
 };
 // export default getHomepage;

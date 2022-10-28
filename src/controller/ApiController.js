@@ -23,7 +23,6 @@ let createNewUser = async(req,res)=>{
     })
 }
 
-
 module.exports={
     getAllUser,createNewUser
 }

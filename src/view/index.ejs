@@ -16,12 +16,10 @@
 
   <body>
     <h1>hello world from ejs.</h1>
-
     <div class="topnav">
       <a class="active" href="#home">Home</a>
       <a href="/uploadFile">UpLoad File</a>
     </div>
-
     <div style="padding-left: 16px">
       <h2>List User</h2>
       <!-- <%= dataUser %> -->
@@ -37,13 +35,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="w3-hover-green">
-          <!-- <tr class="w3-hover-green"> -->
-          <td>Jill</td>
-          <td>Smith</td>
-          <td>50</td>
-          <td>50</td>
-        </tr>
+    
         <!-- <tr class="w3-hover-blue"> -->
         <% for(var i=0; i < dataUser.length; i++) { %>
         <tr class="w3-hover-green">
@@ -51,15 +43,17 @@
           <td><%= dataUser[i].firstName %></td>
           <td><%= dataUser[i].lastName %></td>
           <td>
-            <a href="/detail/user/ <%= dataUser[i].id %>"
+            <a
+              href="/detail/user/ <%= dataUser[i].id %>"
               target="_blank"
               type="button"
             >
               Detail
             </a>
             <form action="/editUser/<%= dataUser[i].id %>" method="get">
-              <button name="userID" type="submit">Edit</button>
+              <button name="abc" type="submit">Edit</button>
             </form>
+            <!-- <a href="/editUser/<%= dataUser[i].id %>">edit</a> -->
             <form action="/deleteUser" method="post">
               <input
                 name="userID"
@@ -98,5 +92,17 @@
         </div>
       </form>
     </div>
+    <div>
+      <form action="/testSendMail" method="post">
+        <label for="reciveEmail">Nhập email gửi tới</label>
+        <input type="text" name="reciveEmail" id="" />
+        <button>Send main</button>
+      </form>
+    </div>
+    <script>
+      //  let sendmail=()=>{
+
+      //  }
+    </script>
   </body>
 </html>
