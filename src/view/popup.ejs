@@ -1,0 +1,40 @@
+<!-- yourEJSfile.ejs -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My EJS Page</title>
+</head>
+
+<body>
+    <h1>Welcome to my EJS Page</h1>
+
+    <!-- Add a button to trigger the popup -->
+    <button onclick="showPopup()">Show Popup</button>
+
+    <!-- Define the popup element -->
+    <div id="popup"
+        style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border:1px solid black;">
+        <h2>Popup Title</h2>
+
+        <label for="Name">Name</label>
+        <input type="text" name="Name">
+
+        <label for="Pass">Pass</label>
+        <input type="text" name="Pass">
+        <button onclick="hidePopup()">Close</button>
+    </div>
+
+    <!-- Add JavaScript code to show and hide the popup -->
+    <script type="text/javascript">
+        function showPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+
+        function hidePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>

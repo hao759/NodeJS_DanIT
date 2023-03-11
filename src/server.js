@@ -12,15 +12,14 @@ app.use(express.json());
 
 configViewEngine(app); // confige view
 
-initWebroute(app); // confige route
+// initWebroute(app); // confige route
 // app.get('/', (req, res) => {
 //     res.render('test/index.ejs')
 // })
-app.use((req,res)=>{
-  return res.render('404.ejs')
-})
+app.use((req, res) => {
+  return res.render("popup.ejs");
+});
 initAPIRoute(app);
-
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`);
