@@ -10,10 +10,10 @@
     <h1>Welcome to my EJS Page</h1>
 
     <!-- Add a button to trigger the popup -->
-    <button onclick="showPopup()">Show Popup</button>
+    <!-- <button onclick="showPopup()">Show Popup</button> -->
 
     <!-- Define the popup element -->
-    <div id="popup"
+    <!-- <div id="popup"
         style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background-color:white; padding:20px; border:1px solid black;">
         <h2>Popup Title</h2>
 
@@ -23,10 +23,10 @@
         <label for="Pass">Pass</label>
         <input type="text" name="Pass">
         <button onclick="hidePopup()">Close</button>
-    </div>
+    </div> -->
 
     <!-- Add JavaScript code to show and hide the popup -->
-    <script type="text/javascript">
+    <!-- <script type="text/javascript">
         function showPopup() {
             document.getElementById("popup").style.display = "block";
         }
@@ -34,7 +34,11 @@
         function hidePopup() {
             document.getElementById("popup").style.display = "none";
         }
-    </script>
+    </script> -->
+    <form action="/getdetailimg" method="post">
+        <input name="Fileenek" type="file">Gui
+        <input type="submit">send</input>
+    </form>
 </body>
 
 </html>
